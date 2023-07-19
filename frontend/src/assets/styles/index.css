@@ -1,0 +1,118 @@
+:root {
+  --purple:  rgb(95, 78, 95);
+}
+main {
+  min-height: 80vh;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height:80vh;
+
+}
+
+
+/* HomeScreen */
+/* Hero */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+  margin: 100px auto;
+  margin-bottom: 0;
+  overflow: hidden; /* Add overflow property to hide overflowing content */
+}
+
+.homescreen-btn {
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 150px;
+  height: 200px;
+  border: 4px solid var(--purple);
+  background: none;
+  padding: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Add overflow property to hide overflowing content */
+}
+
+.homescreen-btn img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 100%; /* Set max-height to ensure image stays within container */
+}
+
+.title {
+  text-align: center;
+  color: var(--purple);
+  margin-top: 10px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .button-container {
+    flex-wrap: wrap;
+    justify-content: center; /* Center the buttons */
+    width: 90%;
+    margin: 50px auto;
+  }
+
+  .homescreen-btn {
+    flex-basis: calc(50% - 5px);
+    margin-bottom: 10px;
+  }
+
+  .homescreen-btn:last-child {
+    margin-bottom: 0;
+  }
+}
+
+  /* End Hero */
+  /* End HomeScreen*/
+
+  /* PlannerForm */
+  .planner-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .planner-form {
+    width: 300px;
+  }
+  
+  .planner-form .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .planner-form label {
+    margin-bottom: 5px;
+  }
+  
+  .planner-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .planner-form button[type="submit"] {
+    background-color: var(--purple);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* END Planner Form */
+  /* Footer */
+  .footer {
+    background-color: var(--purple);
+    color: #fff;
+  }
+/* End Footer */
