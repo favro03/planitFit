@@ -13,6 +13,8 @@ import HomeScreen from './screens/HomeScreen'
 import GoalsScreen from './screens/GoalsScreen'
 import PlannerScreen from './screens/PlannerScreen'
 import PlannerListScreen from './screens/PlannerListScreen';
+import PlannerEditScreen from './screens/PlannerEditScreen'
+import PlannerViewScreen from './screens/PlannerViewScreen'
 import TrackerScreen from './screens/TrackerScreen'
 
 
@@ -32,6 +34,9 @@ function App() {
             <Route path='/tracker' element={<TrackerScreen />} />
             <Route path='/goals' element={<GoalsScreen />} />
             <Route path='/plannerlist' element={<PlannerListScreen />} />
+            <Route path='/planner/:id/edit' element={<PlannerEditScreen />} />
+            <Route path='/planner/:id/view' element={<PlannerViewScreen />} />
+
 
             {/* Admin Screens */}
             <Route path='/admin/userlist' element={<UserListScreen />} />

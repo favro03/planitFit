@@ -110,6 +110,112 @@ body {
   }
   
   /* END Planner Form */
+  /* Start VIEW PLANNER Section */
+
+  .planner-card {
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  
+  .line {
+    border-bottom: 3px solid var(--purple);
+    margin: 10px auto;
+    width: 100%;
+ 
+  }
+
+  .light-line {
+    border-bottom: 1px solid gray;
+    margin: 10px auto;
+    width: 100%;
+ 
+  }
+
+  .planner-card h3 {
+    margin-right: 10px; /* Adjust as needed */
+    color: var(--purple);
+  }
+
+  .planner-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh;  */
+  }
+  /* Planneritems.css */
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 15px;
+}
+
+
+  /* CHECKBOX STYLING */
+ /* Checkboxes.css */
+
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 18px;
+}
+
+/* Hide the default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Custom checkbox design */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  border: 2px solid #6a0dad; /* Purple border color */
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Custom checkmark design (appears in the middle of the box) */
+.checkbox-container input:checked ~ .checkmark:after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 15px;
+  border: solid #6a0dad; /* Purple checkmark color */
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+  /* END CHECKBOX STYLING */
+
+
+  /* End VIEW PLANNER SECTION */
   /* Footer */
   .footer {
     background-color: var(--purple);

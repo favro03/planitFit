@@ -1,11 +1,10 @@
-
 import { LinkContainer } from 'react-router-bootstrap';
 import { Table, Button, Row, Col } from 'react-bootstrap';
-import { FaEdit, FaTrash , FaPlus} from 'react-icons/fa';
-import { useParams } from 'react-router-dom';
+import { FaEdit, FaTrash, FaPlus, FaEye } from 'react-icons/fa';
+// import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-// import Paginate from '../components/Paginate';
 import {
   useGetPlannersQuery,
   useDeletePlannerMutation,
@@ -15,12 +14,13 @@ import { toast } from 'react-toastify';
 
 const PlannerListScreen = () => {
   // const { pageNumber } = useParams();
+ 
 
   const { data, isLoading, error, refetch } = useGetPlannersQuery({
     // pageNumber,
+    user: useSelector((state) => state.auth.user), // Pass the user ID from Redux state
   });
 
-  // console.log(data)
 
   const [deletePlanner, { isLoading: loadingDelete }] =
     useDeletePlannerMutation();
@@ -46,8 +46,18 @@ const PlannerListScreen = () => {
         refetch();
       } catch (err) {
         toast.error(err?.data?.message || err.error);
-      
-    }
+      }
+    
+  };
+
+  const sortedData = data ? [...data].sort((a, b) => b.createdAt.localeCompare(a.createdAt)) : [];
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${month}/${day}/${year}`;
   };
 
   return (
@@ -72,61 +82,44 @@ const PlannerListScreen = () => {
       ) : (
         <>
           <Table striped bordered hover responsive className='table-sm'>
-          <thead>
-            <tr>
-              <th>ID</th>
-              {/* <th>Exercise Goal</th>
-              <th>AM Self Care</th>
-              <th>AM Tasks</th>
-              <th>Breakfast</th>
-              <th>Lunch</th>
-              <th>Dinner</th>
-              <th>Snack</th>
-              <th>PM Activities</th>
-              <th>Daily Chore</th>
-              <th>PM Self Care</th>
-              <th>Reflection</th> */}
-              <th>Created At</th>
-            </tr>
-          </thead>
-          <tbody>
-  {data?.planners && data.planners.map((planner) => (
-      <tr>
-        <td>{planner._id}</td>
-        {/* <td>{planner.exerciseGoal}</td>
-        <td>{planner.amSelfCare}</td>
-        <td>{planner.amTasks}</td>
-        <td>{planner.food.breakfast}</td>
-        <td>{planner.food.lunch}</td>
-        <td>{planner.food.dinner}</td>
-        <td>{planner.food.snack}</td>
-        <td>{planner.pmActivities}</td>
-        <td>{planner.dailyChore}</td>
-        <td>{planner.pmSelfCare}</td>
-        <td>{planner.reflection}</td> */}
-        <td>{planner.createdAt}</td>
-        <td>
-          <LinkContainer to={`/planner/${planner._id}/edit`}>
-            <Button variant='light' className='btn-sm mx-2'>
-              <FaEdit />
-            </Button>
-          </LinkContainer>
-          <Button
-            variant='danger'
-            className='btn-sm'
-            onClick={() => deleteHandler(planner._id)}
-          >
-            <FaTrash style={{ color: 'white' }} />
-          </Button>
-        </td>
-      </tr>
-
-  ))}
-</tbody>
-
-
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Created At</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {sortedData.map((planner) => (
+                <tr key={planner._id}>
+                  <td>{planner._id}</td>
+                  <td>{formatDate(planner.createdAt)}</td>
+                  <td>
+                    <LinkContainer to={`/planner/${planner._id}/edit`}>
+                      <Button variant='light' className='btn-sm mx-2'>
+                        <FaEdit />
+                      </Button>
+                    </LinkContainer>
+                    
+                    <LinkContainer to={`/planner/${planner._id}/view`}>
+                      <Button variant='light' className='btn-sm mx-2'>
+                        <FaEye />
+                      </Button>
+                    </LinkContainer>
+                   
+                    
+                    <Button
+                      variant='danger'
+                      className='btn-sm'
+                      onClick={() => deleteHandler(planner._id)}
+                    >
+                      <FaTrash style={{ color: 'white' }} />
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
           </Table>
-          {/* <Paginate pages={data.pages} page={data.page} isAdmin={true} /> */}
         </>
       )}
     </>
