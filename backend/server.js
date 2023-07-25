@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 dotenv.config();
 import connectDB from './config/db.js';
 import plannerRoutes from './routes/plannerRoutes.js';
+import trackerRoutes from './routes/trackerRoutes.js'
 import userRoutes from './routes/userRoutes.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use('/api/planner', plannerRoutes);
+app.use('/api/tracker', trackerRoutes)
 app.use('/api/users', userRoutes);
 
 

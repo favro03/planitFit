@@ -4,7 +4,6 @@ const plannerSchema = mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
       ref: 'User', // Create a reference to the User model
     },
     exerciseGoal: { type: [String] },

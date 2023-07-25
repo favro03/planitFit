@@ -1,11 +1,8 @@
-import User from '../models/userModel.js';
-import users from './users.js';
+import users from './users.js'
 
 const planners = [
   {
-    user: {
-        name: 'John Doe',
-      },
+    user: users[0]._id,
     exerciseGoal: ['Gym 30 minutes', '2-mile dog walk'],
     amSelfCare: ['Shower', 'Wash Face'],
     amTasks: ['Put dishes away', 'Work from 8-4'],
@@ -21,9 +18,7 @@ const planners = [
     reflection: 'The day was good. We went to the pool and had fun.',
   },
   {
-    user: {
-        name: 'Tracy Favro',
-      },
+    user: users[0]._id,
     exerciseGoal: ['Yoga 1 hour'],
     amSelfCare: ['Meditation'],
     amTasks: ['Grocery shopping', 'Laundry'],
@@ -39,9 +34,7 @@ const planners = [
     reflection: 'Had a relaxing day. Enjoyed the evening with a good movie.',
   },
   {
-    user: {
-        name: 'Tracy Favro',
-      },
+    user: users[0]._id,
     exerciseGoal: ['Running 5 miles'],
     amSelfCare: ['Stretching'],
     amTasks: ['Prepare presentation'],
