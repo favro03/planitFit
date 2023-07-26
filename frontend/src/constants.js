@@ -2,4 +2,5 @@
 export const BASE_URL = ''
 
 export const PLANNERS_URL = '/api/planner'
+export const TRACKERS_URL = '/api/tracker'
 export const USERS_URL = '/api/users'

@@ -11,11 +11,10 @@ import UserListScreen from './screens/admin/UserListScreen';
 import ProfileScreen from "./screens/ProfileScreen";
 import HomeScreen from './screens/HomeScreen'
 import GoalsScreen from './screens/GoalsScreen'
-import PlannerScreen from './screens/PlannerScreen'
 import PlannerListScreen from './screens/PlannerListScreen';
 import PlannerEditScreen from './screens/PlannerEditScreen'
 import PlannerViewScreen from './screens/PlannerViewScreen'
-import TrackerScreen from './screens/TrackerScreen'
+import TrackerListScreen from './screens/TrackerListScreen';
 
 
 function App() {
@@ -27,15 +26,19 @@ function App() {
        <Container>
           <Routes>
             <Route path='/' element={<HomeScreen />} />
+
             <Route path='/login' element={<LoginScreen />} />
             <Route path='/register' element={<RegisterScreen />} />
             <Route path='/profile' element={<ProfileScreen />} />
-            <Route path='/planner' element={<PlannerScreen />} />
-            <Route path='/tracker' element={<TrackerScreen />} />
+
+           
             <Route path='/goals' element={<GoalsScreen />} />
+
             <Route path='/plannerlist' element={<PlannerListScreen />} />
             <Route path='/planner/:id/edit' element={<PlannerEditScreen />} />
             <Route path='/planner/:id/view' element={<PlannerViewScreen />} />
+
+            <Route path='/tracker' element={<TrackerListScreen />} />
 
 
             {/* Admin Screens */}
