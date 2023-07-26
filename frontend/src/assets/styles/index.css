@@ -214,6 +214,45 @@ body {
 
   /* END CHECKBOX STYLING */
 
+  /* Trackeritems.css */
+
+.tracker-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+/* .trackerview {
+  width: 80%;
+} */
+
+.tracker-card {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.tracker-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+strong {
+  font-size: 18px;
+  color: #333;
+  padding-bottom: 15px;
+}
+
 
   /* End VIEW PLANNER SECTION */
   /* Footer */
