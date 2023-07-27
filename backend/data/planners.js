@@ -3,6 +3,7 @@ import users from './users.js'
 const planners = [
   {
     user: users[0]._id,
+    test: true,
     exerciseGoal: ['Gym 30 minutes', '2-mile dog walk'],
     amSelfCare: ['Shower', 'Wash Face'],
     amTasks: ['Put dishes away', 'Work from 8-4'],
@@ -19,6 +20,7 @@ const planners = [
   },
   {
     user: users[0]._id,
+    test:false,
     exerciseGoal: ['Yoga 1 hour'],
     amSelfCare: ['Meditation'],
     amTasks: ['Grocery shopping', 'Laundry'],
@@ -35,6 +37,7 @@ const planners = [
   },
   {
     user: users[0]._id,
+    test:true,
     exerciseGoal: ['Running 5 miles'],
     amSelfCare: ['Stretching'],
     amTasks: ['Prepare presentation'],

@@ -14,6 +14,7 @@ const getTrackers = asyncHandler(async (req, res) => {
 // @access Private
 const createTracker = asyncHandler(async (req, res) => {
   const {
+    date,
     weight,
     neck,
     boobs,
@@ -28,6 +29,7 @@ const createTracker = asyncHandler(async (req, res) => {
 
   const tracker = new Tracker({
     user: req.user._id,
+    date,
     weight,
     neck,
     boobs,

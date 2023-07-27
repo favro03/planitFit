@@ -16,6 +16,7 @@ import PlannerEditScreen from './screens/PlannerEditScreen'
 import PlannerViewScreen from './screens/PlannerViewScreen'
 import TrackerListScreen from './screens/TrackerListScreen';
 import TrackerViewScreen from './screens/TrackerViewScreen'
+import Test from './screens/Test';
 
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
             <Route path='/tracker' element={<TrackerListScreen />} />
             <Route path='/tracker/:id/view' element={<TrackerViewScreen />} />
 
-
+            <Route path='/test/:id' element={<Test />} />
 
             {/* Admin Screens */}
             <Route path='/admin/userlist' element={<UserListScreen />} />
