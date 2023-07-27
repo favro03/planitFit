@@ -15,35 +15,21 @@ const getPlanners = asyncHandler(async (req, res) => {
 // @route  POST /api/planner
 // @access Private
 const createPlanner = asyncHandler(async (req, res) => {
-  const {
-    exerciseGoal,
-    amSelfCare,
-    amTasks,
-    breakfast,
-    lunch,
-    dinner,
-    snack,
-    pmActivities,
-    dailyChore,
-    pmSelfCare,
-    reflection,
-  } = req.body;
-
   const planner = new Planner({
     user: req.user._id,
-    exerciseGoal,
-    amSelfCare,
-    amTasks,
+    exerciseGoal: '',
+    amSelfCare:'',
+    amTasks:'',
     food: {
-      breakfast,
-      lunch,
-      dinner,
-      snack,
+      breakfast:'',
+      lunch:'',
+      dinner:'',
+      snack:'',
     },
-    pmActivities,
-    dailyChore,
-    pmSelfCare,
-    reflection,
+    pmActivities:'',
+    dailyChore:'',
+    pmSelfCare:'',
+    reflection:'',
   });
 
   const createdPlanner = await planner.save();

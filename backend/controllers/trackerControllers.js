@@ -13,33 +13,20 @@ const getTrackers = asyncHandler(async (req, res) => {
 // @route  POST /api/tracker
 // @access Private
 const createTracker = asyncHandler(async (req, res) => {
-  const {
-    date,
-    weight,
-    neck,
-    boobs,
-    waist,
-    stomach,
-    hips,
-    butt,
-    thigh,
-    calf,
-    arm,
-  } = req.body;
-
+  
   const tracker = new Tracker({
     user: req.user._id,
-    date,
-    weight,
-    neck,
-    boobs,
-    waist,
-    stomach,
-    hips,
-    butt,
-    thigh,
-    calf,
-    arm,
+    date:'',
+    weight:'',
+    neck:'',
+    boobs:'',
+    waist:'',
+    stomach:'',
+    hips:'',
+    butt:'',
+    thigh:'',
+    calf:'',
+    arm:'',
   });
 
   const createdTracker = await tracker.save();
