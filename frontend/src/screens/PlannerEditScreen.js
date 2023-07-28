@@ -15,13 +15,13 @@ const PlannerEditScreen = () => {
     const { id: plannerId } = useParams(); 
     
 
-  // State variables for food
+
   const [breakfast, setBreakfast] = useState([]);
   const [lunch, setLunch] = useState([]);
   const [snack, setSnack] = useState([]);
   const [dinner, setDinner] = useState([]);
 
-  // State variables for other items
+
   const [exerciseGoal, setExerciseGoal] = useState([]);
   const [amSelfCare, setAmSelfCare] = useState([]);
   const [amTasks, setAmTasks] = useState([]);
@@ -69,10 +69,10 @@ const PlannerEditScreen = () => {
 
   useEffect(() => {
     if (planner) {
-      setBreakfast(planner.food.breakfast || []);
-      setLunch(planner.food.lunch || []);
-      setSnack(planner.food.snack || []);
-      setDinner(planner.food.dinner || []);
+      setBreakfast(planner.breakfast || []);
+      setLunch(planner.lunch || []);
+      setSnack(planner.snack || []);
+      setDinner(planner.dinner || []);
       setExerciseGoal(planner.exerciseGoal || []);
       setAmSelfCare(planner.amSelfCare || []);
       setAmTasks(planner.amTasks || []);
@@ -81,7 +81,7 @@ const PlannerEditScreen = () => {
       setPmSelfCare(planner.pmSelfCare || []);
       setReflection(planner.reflection || '');
     } else {
-      // Set default values when planner is undefined
+   
       setBreakfast([]);
       setLunch([]);
       setSnack([]);

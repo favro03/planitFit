@@ -40,7 +40,7 @@ const TrackerListScreen = () => {
     useCreateTrackerMutation();
 
   const createTrackerHandler = async () => {
-    
+   
       try {
         await createTracker();
         refetch();
@@ -50,7 +50,7 @@ const TrackerListScreen = () => {
     
   };
 
-  const sortedData = data ? [...data].sort((a, b) => b.date.localeCompare(a.date)) : [];
+  
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -59,6 +59,8 @@ const TrackerListScreen = () => {
     const year = date.getFullYear();
     return `${month}/${day}/${year}`;
   };
+
+  const sortedData = data ? [...data].sort((a, b) => b.createdAt.localeCompare(a.createdAt)) : [];
 
   return (
     <>
@@ -86,10 +88,10 @@ const TrackerListScreen = () => {
               <tr>
                 
                 <th>Created At</th>
-                <th>Date</th>
+                {/* <th>Date</th> */}
                 <th>Weight</th>
                 <th>Neck</th>
-                <th>Boobs</th>
+                <th>Chest</th>
                 <th>Waist</th>
                 <th>Stomach</th>
                 <th>Hips</th>
@@ -101,11 +103,11 @@ const TrackerListScreen = () => {
               </tr>
             </thead>
             <tbody>
-              {sortedData.map((tracker) => (
+              {sortedData?.map((tracker) => (
                 <tr key={tracker._id}>
                   
                   <td>{formatDate(tracker.createdAt)}</td>
-                  <td>{tracker.date}</td>
+                  {/* <td>{tracker.date}</td> */}
                   <td>{tracker.weight}</td>
                   <td>{tracker.neck}</td>
                   <td>{tracker.boobs}</td>

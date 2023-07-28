@@ -4,7 +4,6 @@ import { Form, Button } from 'react-bootstrap';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import FormContainer from '../components/FormContainer';
-import { FaTrash } from 'react-icons/fa'
 import { toast } from 'react-toastify';
 import {
   useGetTrackerDetailsQuery,
@@ -15,7 +14,7 @@ const TrackerEditScreen = () => {
     const { id: trackerId } = useParams(); 
     
 
-  // State variables for food
+ 
   const [weight, setWeight] = useState([]);
   const [neck, setNeck] = useState([]);
   const [boobs, setBoobs] = useState([]);
@@ -43,6 +42,7 @@ const TrackerEditScreen = () => {
     e.preventDefault();
     try {
       await updateTracker({
+        trackerId,
         weight,
         neck,
         boobs,
@@ -95,7 +95,7 @@ const TrackerEditScreen = () => {
   
   return (
     <>
-      <Link to='/trackerlist' className='btn btn-light my-3'>
+      <Link to='/tracker' className='btn btn-light my-3'>
         Go Back
       </Link>
       <FormContainer>
@@ -127,10 +127,10 @@ const TrackerEditScreen = () => {
           />
         </Form.Group>
         <Form.Group controlId='boobs'>
-          <Form.Label>Boobs</Form.Label>
+          <Form.Label>Chest</Form.Label>
           <Form.Control
             as='textarea'
-            placeholder='Enter Boob Measurement'
+            placeholder='Enter Chest Measurement'
             value={boobs}
             onChange={(e) => setBoobs(e.target.value)}
           />

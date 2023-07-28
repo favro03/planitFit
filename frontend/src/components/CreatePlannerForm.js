@@ -36,7 +36,7 @@ const CreatePlannerForm = () => {
 
   const [createPlanner, { isLoading }] = useCreatePlannerMutation();
 
-  const [updatePlanner, { isLoading: loadingUpdate }] =
+  const { isLoading: loadingUpdate, mutateAsync: updatePlanner } =
   useUpdatePlannerMutation();
 
   const navigate = useNavigate();
@@ -53,33 +53,36 @@ const CreatePlannerForm = () => {
     });
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
 
-    const updatePlanner = {
-      plannerId,
-      exerciseGoal,
-      amSelfCare,
-      amTasks,
-      food: {
-        breakfast,
-        lunch,
-        dinner,
-        snack,
-      },
-      pmActivities,
-      dailyChore,
-      pmSelfCare,
-      reflection,
-    };
+    try {
+      const updatedPlanner = {
+        plannerId,
+        exerciseGoal,
+        amSelfCare,
+        amTasks,
+    
+          breakfast,
+          lunch,
+          dinner,
+          snack,
+   
+        pmActivities,
+        dailyChore,
+        pmSelfCare,
+        reflection,
+      };
 
-    toast.success('Planner updated');
-    refetch();
-    navigate('/planner');
-  } catch (err) {
-    toast.error(err?.data?.message || err.error);
-  }
-};
+      await updatePlanner(updatedPlanner);
+      toast.success('Planner updated');
+      refetch();
+      navigate('/planner');
+    } catch (err) {
+      toast.error(err?.data?.message || err.error);
+    }
+  };
+
 useEffect(() => {
     if (planner) {
       setExerciseGoal(planner.exerciseGoal);
@@ -100,7 +103,7 @@ useEffect(() => {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={submitHandler}>
       <div>
         <label htmlFor="exerciseGoal">Exercise Goal</label>
         {exerciseGoal.map((goal, index) => (
@@ -206,9 +209,10 @@ useEffect(() => {
           type="text"
           id="breakfast"
           value={breakfast}
-          onChange={(e) => setBreakfast(e.target.value)}
+          onChange={(e) => setLunch(e.target.value)}
         />
       </div>
+
 
       <div>
         <label htmlFor="lunch">Lunch</label>

@@ -7,7 +7,10 @@ const Planneritems = ({ planner }) => {
     exerciseGoal,
     amSelfCare,
     amTasks,
-    food,
+    breakfast,
+    lunch,
+    snack,
+    dinner,
     pmActivities,
     dailyChore,
     pmSelfCare,
@@ -51,7 +54,7 @@ const Planneritems = ({ planner }) => {
         <Checkbox />
         <div className='planner-content'>
           <h3>Breakfast:</h3>
-          <strong>{food.breakfast}</strong>
+          <strong>{breakfast}</strong>
           </div>
         </Card.Title>
         <div className='light-line'></div>
@@ -59,7 +62,7 @@ const Planneritems = ({ planner }) => {
         <Checkbox />
         <div className='planner-content'>
           <h3>Lunch:</h3>
-          <strong>{food.lunch}</strong>
+          <strong>{lunch}</strong>
           </div>
         </Card.Title>
         <div className='light-line'></div>
@@ -67,7 +70,7 @@ const Planneritems = ({ planner }) => {
         <Checkbox />
         <div className='planner-content'>
           <h3>Snack:</h3>
-          <strong>{food.snack}</strong>
+          <strong>{snack}</strong>
           </div>
         </Card.Title>
         <div className='light-line'></div>
@@ -75,7 +78,7 @@ const Planneritems = ({ planner }) => {
         <Checkbox />
         <div className='planner-content'>
           <h3>Dinner:</h3>
-          <strong>{food.dinner}</strong>
+          <strong>{dinner}</strong>
           </div>
         </Card.Title>
         <div className='line'></div>

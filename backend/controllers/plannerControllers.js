@@ -16,16 +16,16 @@ const getPlanners = asyncHandler(async (req, res) => {
 // @access Private
 const createPlanner = asyncHandler(async (req, res) => {
   const planner = new Planner({
-    user: req.user._id,
+   
     exerciseGoal: '',
     amSelfCare:'',
     amTasks:'',
-    food: {
+   
       breakfast:'',
       lunch:'',
       dinner:'',
       snack:'',
-    },
+    
     pmActivities:'',
     dailyChore:'',
     pmSelfCare:'',
@@ -45,7 +45,10 @@ const updatePlanner = asyncHandler(async (req, res) => {
     exerciseGoal,
     amSelfCare,
     amTasks,
-    food,
+breakfast,
+lunch,
+snack,
+dinner,
     pmActivities,
     dailyChore,
     pmSelfCare,
@@ -58,7 +61,10 @@ const updatePlanner = asyncHandler(async (req, res) => {
     planner.exerciseGoal = exerciseGoal;
     planner.amSelfCare = amSelfCare;
     planner.amTasks = amTasks;
-    planner.food = food;
+    planner.breakfast = breakfast;
+    planner.lunch = lunch;
+    planner.snack = snack;
+    planner.dinner = dinner
     planner.pmActivities = pmActivities;
     planner.dailyChore = dailyChore;
     planner.pmSelfCare = pmSelfCare;

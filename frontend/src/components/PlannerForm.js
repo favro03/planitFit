@@ -34,12 +34,12 @@ const PlannerForm = ({ handleSubmit }) => {
       exerciseGoal,
       amSelfCare,
       amTasks,
-      food: {
+     
         breakfast,
         lunch,
         dinner,
         snack,
-      },
+      
       pmActivities,
       dailyChore,
       pmSelfCare,

@@ -7,12 +7,12 @@ const planners = [
     exerciseGoal: ['Gym 30 minutes', '2-mile dog walk'],
     amSelfCare: ['Shower', 'Wash Face'],
     amTasks: ['Put dishes away', 'Work from 8-4'],
-    food: {
+  
       breakfast: ['Drink', 'Banana'],
       lunch: ['Sandwich', 'Chips'],
       snack: ['Protein bar'],
       dinner: ['Spaghetti', 'Garlic bread'],
-    },
+ 
     pmActivities: ['Pick up kids at 4', 'Softball practice', 'Drinks with the girls', 'Computer time'],
     dailyChore: ['Clean Bathroom'],
     pmSelfCare: ['Wash face'],
@@ -24,12 +24,12 @@ const planners = [
     exerciseGoal: ['Yoga 1 hour'],
     amSelfCare: ['Meditation'],
     amTasks: ['Grocery shopping', 'Laundry'],
-    food: {
+    
       breakfast: ['Smoothie', 'Toast'],
       lunch: ['Salad', 'Fruit'],
       snack: ['Yogurt'],
       dinner: ['Grilled chicken', 'Steamed vegetables'],
-    },
+  
     pmActivities: ['Movie night', 'Read a book'],
     dailyChore: ['Vacuum the house'],
     pmSelfCare: ['Take a bath'],
@@ -41,12 +41,12 @@ const planners = [
     exerciseGoal: ['Running 5 miles'],
     amSelfCare: ['Stretching'],
     amTasks: ['Prepare presentation'],
-    food: {
+    
       breakfast: ['Eggs', 'Toast'],
       lunch: ['Wrap', 'Veggies'],
       snack: ['Fruit'],
       dinner: ['Fish', 'Quinoa'],
-    },
+  
     pmActivities: ['Attend a meeting', 'Go to the gym'],
     dailyChore: ['Organize desk'],
     pmSelfCare: ['Meditation'],

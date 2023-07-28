@@ -53,7 +53,7 @@ const Trackeritems = ({ tracker }) => {
         <Card.Title className='tracker-card' as='div'>
        
         <div className='tracker-content'>
-          <h3>Bzoobs:</h3>
+          <h3>Chest:</h3>
           <strong>{boobs}</strong>
           </div>
         </Card.Title>

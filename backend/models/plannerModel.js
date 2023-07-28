@@ -10,12 +10,12 @@ const plannerSchema = mongoose.Schema(
     exerciseGoal: { type: [String] },
     amSelfCare: { type: [String] },
     amTasks: { type: [String] },
-    food: {
+    
       breakfast: { type: [String] },
       lunch: { type: [String] },
       snack: { type: [String] },
       dinner: { type: [String] },
-    },
+    
     pmActivities: { type: [String] },
     dailyChore: { type: [String] },
     pmSelfCare: { type: [String] },

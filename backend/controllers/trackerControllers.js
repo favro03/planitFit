@@ -15,8 +15,6 @@ const getTrackers = asyncHandler(async (req, res) => {
 const createTracker = asyncHandler(async (req, res) => {
   
   const tracker = new Tracker({
-    user: req.user._id,
-    date:'',
     weight:'',
     neck:'',
     boobs:'',
