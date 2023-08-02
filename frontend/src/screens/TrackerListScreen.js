@@ -1,5 +1,6 @@
 import { LinkContainer } from 'react-router-bootstrap';
 import { Table, Button, Row, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import { FaEdit, FaTrash, FaPlus, FaEye } from 'react-icons/fa';
 // import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -14,6 +15,8 @@ import { toast } from 'react-toastify';
 
 const TrackerListScreen = () => {
   // const { pageNumber } = useParams();
+  const navigate = useNavigate();
+
  
 
   const { data, isLoading, error, refetch } = useGetTrackersQuery({
@@ -62,12 +65,22 @@ const TrackerListScreen = () => {
 
   const sortedData = data ? [...data].sort((a, b) => b.createdAt.localeCompare(a.createdAt)) : [];
 
+ 
+<button onClick={() => navigate('/trackergraphs')}>Graphs</button>
+
   return (
     <>
       <Row className='align-items-center'>
         <Col>
           <h1>Trackers</h1>
         </Col>
+        
+        <Col className='text-end'>
+          <Button className='my-3' onClick={() => navigate('/trackergraphs')}>
+            Graphs
+          </Button>
+        </Col>
+       
         <Col className='text-end'>
           <Button className='my-3' onClick={createTrackerHandler}>
             <FaPlus /> Create Tracker

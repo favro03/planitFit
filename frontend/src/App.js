@@ -17,6 +17,8 @@ import PlannerViewScreen from './screens/PlannerViewScreen'
 import TrackerListScreen from './screens/TrackerListScreen';
 import TrackerViewScreen from './screens/TrackerViewScreen'
 import TrackerEditScreen from './screens/TrackerEditSceren';
+import TrackerGraphsScreen from './screens/TrackerGraphsScreen'
+
 import Test from './screens/Test';
 
 
@@ -44,6 +46,7 @@ function App() {
             <Route path='/tracker' element={<TrackerListScreen />} />
             <Route path='/tracker/:id/view' element={<TrackerViewScreen />} />
             <Route path='/tracker/:id/edit' element={<TrackerEditScreen />} />
+            <Route path='/trackergraphs' element={<TrackerGraphsScreen /> } />
 
             <Route path='/test/:id' element={<Test />} />
 

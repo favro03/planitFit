@@ -51,6 +51,22 @@ const Header = () => {
               <LinkContainer to='/'>
             <Nav.Link className="nav-link">Home</Nav.Link>
             </LinkContainer>
+
+            <NavDropdown title='Menu' id='menu'>
+                  <LinkContainer to='/plannerlist'>
+                    <NavDropdown.Item>Planner</NavDropdown.Item>
+                  </LinkContainer>
+                  
+                  <LinkContainer to='/tracker'>
+                    <NavDropdown.Item>Tracker</NavDropdown.Item>
+                  </LinkContainer>
+
+                  <LinkContainer to='/goals'>
+                    <NavDropdown.Item>Goals</NavDropdown.Item>
+                  </LinkContainer>
+
+
+                </NavDropdown>
               
               {userInfo ? (
                 <>
