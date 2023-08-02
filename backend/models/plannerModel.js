@@ -6,7 +6,7 @@ const plannerSchema = mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User', // Create a reference to the User model
     },
-    test:{type: Boolean},
+    // test:{type: Boolean},
     exerciseGoal: { type: [String] },
     amSelfCare: { type: [String] },
     amTasks: { type: [String] },

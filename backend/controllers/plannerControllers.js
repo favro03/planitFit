@@ -6,7 +6,16 @@ import Planner from "../models/plannerModel.js";
 // @access Public
 const getPlanners = asyncHandler(async (req, res) => {
   const planners = await Planner.find({});
-  res.json(planners);
+
+  // Convert the timestamps to Date objects
+  const formattedPlanners = planners.map((planner) => {
+    return {
+      ...planner._doc,
+      timestamps: planner.timestamps.map((ts) => new Date(ts)), // Convert each timestamp to a Date object
+    };
+  });
+
+  res.json(formattedPlanners);
 });
 
 
@@ -63,8 +72,8 @@ dinner,
     planner.amTasks = amTasks;
     planner.breakfast = breakfast;
     planner.lunch = lunch;
-    planner.snack = snack;
-    planner.dinner = dinner
+    planner.snack=snack;
+    planner.dinner=dinner;22
     planner.pmActivities = pmActivities;
     planner.dailyChore = dailyChore;
     planner.pmSelfCare = pmSelfCare;

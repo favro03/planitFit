@@ -16,7 +16,7 @@ const trackerSchema = mongoose.Schema(
           thigh: {type: Number},
           calf: {type: Number},
           arm: {type: Number},
-          date: Date,
+        //   date: Date,
     },
     {
         timestamps: true,
