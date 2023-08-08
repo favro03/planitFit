@@ -3,12 +3,16 @@ import { Line } from 'react-chartjs-2';
 import 'chartjs-adapter-moment';
 
 const ChestProgressChart = ({ chestData, timestamps }) => {
+  const sortedData = timestamps.map((timestamp, index) => ({
+    x: new Date(timestamp), // Convert to a JavaScript Date object
+    y: chestData[index],
+  }));
     const chartData = {
         labels: timestamps,
         datasets: [
           {
             label: 'Chest Progress',
-            data: chestData,
+            data: sortedData,
             fill: false,
             borderColor: 'rgba(75, 192, 192, 1)',
             tension: 0.1,

@@ -3,12 +3,17 @@ import { Line } from 'react-chartjs-2';
 import 'chartjs-adapter-moment';
 
 const WeightProgressChart = ({ weightData, timestamps }) => {
+
+  const sortedData = timestamps.map((timestamp, index) => ({
+    x: new Date(timestamp), // Convert to a JavaScript Date object
+    y: weightData[index],
+  }));
     const chartData = {
         labels: timestamps,
         datasets: [
           {
             label: 'Weight Progress',
-            data: weightData,
+            data: sortedData,
             fill: false,
             borderColor: 'rgba(75, 192, 192, 1)',
             tension: 0.1,

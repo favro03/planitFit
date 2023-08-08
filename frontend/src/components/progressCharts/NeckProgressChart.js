@@ -4,13 +4,17 @@ import 'chartjs-adapter-moment';
 import Chart from 'chart.js/auto'; // Import Chart.js (auto mode)
 
 const NeckProgressChart = ({ neckData, timestamps }) => {
+  const sortedData = timestamps.map((timestamp, index) => ({
+    x: new Date(timestamp), // Convert to a JavaScript Date object
+    y: neckData[index],
+  }));
   
   const chartData = {
     labels: timestamps,
     datasets: [
       {
         label: 'Neck Progress',
-        data: neckData,
+        data: sortedData,
         fill: false,
         borderColor: 'rgba(75, 192, 192, 1)',
         tension: 0.1,
