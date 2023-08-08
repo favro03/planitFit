@@ -37,14 +37,14 @@ const Hero = () => {
         </span>
       </div>
 
-      <div>
+      {/* <div>
         <button className="homescreen-btn" onClick={() => handleButtonClick('/goals')}>
           <img src={GoalsImage} alt="Goals" />
         </button>
         <span className="title">
           <h2>Goals</h2>
         </span>
-      </div>
+      </div> */}
     </div>
   );
 };
